@@ -1,0 +1,93 @@
+/**
+* Holds all the different globalize elements
+*
+*/
+button{
+     border: 0;
+     outline: none;
+}
+.responsive-tabs {
+    display: none;
+	@include responsive-min(md) {
+    	border-bottom: 1px solid #c4c4c4;
+		display: flex;
+    	flex-wrap: wrap;
+    	justify-content: center;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		width: 100%;
+		text-align: center;
+	}
+	@include clearfix;
+  	li {
+  		width: auto;
+	    margin: 0 0 -3px;
+	    cursor: pointer;
+	    padding: 6px 21px;
+	    line-height: 31px;
+	    overflow: hidden;
+	    position: relative;
+	    color: #7f7f7f;
+	    &:hover {
+			color: $primary;
+		}
+		&.active {
+			color: $primary;
+			border-bottom: 5px solid $primary;
+		}
+  	}
+}
+
+.tab_container {
+	width: 100%;
+	overflow: auto;
+	@include clearfix;
+	.tab_content {
+	  	padding: 20px;
+	  	display: none;
+	}
+	.tab_drawer_heading {
+	    color: #7f7f7f;
+	    margin: 0;
+	    padding: 10px 20px;
+	    display: block;
+	    cursor: pointer;
+	    -webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+    	border-bottom: 1px solid #c4c4c4;
+	  	@include responsive-min(md) {
+	  		display: none;
+	  	}
+	  	&.d_active {
+		    color: $primary;
+			border-bottom: 5px solid $primary;
+		}
+	}
+}
+
+.hierarchy-select-input {
+	.dropdown-toggle {
+		background-color: #ffffff !important;
+		color: #495057 !important;
+		border: 1px solid #ced4da;
+		border-color: #ced4da;
+		border-radius: 0.25rem;
+		transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+		text-align: left;
+		position: relative;
+		&:after {
+			vertical-align: middle;
+			position: absolute;
+		    right: 4px;
+		    top: 17px;
+		}
+	}
+	/* .dropdown-menu {
+
+	} */
+}

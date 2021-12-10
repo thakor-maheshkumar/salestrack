@@ -1,0 +1,245 @@
+/**
+ * Holds all the mixins
+ *
+ */
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .02px, null);
+}
+
+@mixin responsive-min($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media only screen and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+@mixin responsive-max($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media only screen and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+@mixin animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes slideInLeft {
+  from {
+    display: block;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    display: block;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    display: none;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    display: none;
+
+  }
+}
+@-webkit-keyframes expandIn {
+  from {
+    padding-left: 50px;
+
+  }
+
+  to {
+    padding-left: 0;
+  }
+}
+
+@keyframes expandIn {
+  from {
+    padding-left: 50px;
+  }
+
+  to {
+    padding-left: 0;
+  }
+}
+
+@-webkit-keyframes expandOut {
+  from {
+    padding-left: 0;
+  }
+
+  to {
+    padding-left: 50px;
+  }
+}
+
+@keyframes expandOut {
+  from {
+    padding-left: 0;
+  }
+
+  to {
+    padding-left: 50px;
+  }
+}
+@include responsive-min(sm) {
+  @-webkit-keyframes expandIn {
+    from {
+      padding-left: 170px;
+
+    }
+
+    to {
+      padding-left: 0;
+    }
+  }
+
+  @keyframes expandIn {
+    from {
+      padding-left: 170px;
+    }
+
+    to {
+      padding-left: 0;
+    }
+  }
+
+  @-webkit-keyframes expandOut {
+    from {
+      padding-left: 0;
+    }
+
+    to {
+      padding-left: 170px;
+    }
+  }
+
+  @keyframes expandOut {
+    from {
+      padding-left: 0;
+    }
+
+    to {
+      padding-left: 170px;
+    }
+  }
+}
+
+@include responsive-min(md) {
+    @-webkit-keyframes expandIn {
+      from {
+        padding-left: 250px;
+
+      }
+
+      to {
+        padding-left: 0;
+      }
+    }
+
+    @keyframes expandIn {
+      from {
+        padding-left: 250px;
+      }
+
+      to {
+        padding-left: 0;
+      }
+    }
+
+    @-webkit-keyframes expandOut {
+      from {
+        padding-left: 0;
+      }
+
+      to {
+        padding-left: 250px;
+      }
+    }
+
+    @keyframes expandOut {
+      from {
+        padding-left: 0;
+      }
+
+      to {
+        padding-left: 250px;
+      }
+    }
+}
+
+@mixin primary-shadow {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+    background: #7d7e7d; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}

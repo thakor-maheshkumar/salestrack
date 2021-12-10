@@ -1,0 +1,54 @@
+/**
+* Holds all the variables used across the system
+*
+*/
+
+//Grid columns
+$grid-columns: 24;
+
+//Grid gultter width
+$grid-gutter-width-base: 30px;
+
+//Different type of colors
+
+// $red: #de1b23;
+$white: #ffffff;
+$black: #000000;
+// $green: #31d294;
+$gray-600: #a9a9a9;
+$primary: #ef8157;
+$light-blue: #00BBFF;
+$theme-color: #51cbce;
+
+$border-color: #d0d5e2;
+
+$font-color: #282828;
+
+//different paths
+$fonts-path: '../fonts/';
+$images-path: '../images/';
+
+//Bootstrap overriding
+$icon-font-path: $fonts-path;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 480px,
+	md: 768px,
+	lg: 1200px
+);
+
+$container-max-widths: (
+	lg: 1050px
+);
+
+// Font
+$font-family-type1: 'MontserratRegular', 'Helvetica', 'Arial', Sans-serif;
+$font-family-type2: 'MontserratMedium', $font-family-type1;
+$font-family-type3: 'MontserratLight', $font-family-type1;
+$font-family-type4: 'MontserratBold', $font-family-type1;
+
+//Body variables
+$body-bg: var(--white);
+$font-size-base: 1rem;
+$line-height-base: 1.6;

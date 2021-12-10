@@ -1,0 +1,34 @@
+/*
+ * Filename : style.scss
+ *
+ *
+ * Contains all the styles of main application
+ * via importing all the individual scss files
+ */
+
+@import "app/settings";
+@import "app/fonts";
+@import "bootstrap";
+@import "font-awesome";
+@import "app/mixins";
+@import "app/library/bootstrap-slider";
+@import "app/library/datatables";
+@import "app/library/select2";
+@import "app/library/fixedColumnsDataTables";
+@import "app/library/bootstrap-datepicker";
+@import "app/library/intlTelInput";
+@import "app/library/summernote-bs4";
+@import "app/library/OverlayScrollbars";
+@import "app/library/hierarchy-select";
+@import "app/base";
+@import "app/elements";
+@import "app/input";
+@import "app/modal";
+@import "app/navbar";
+@import "app/slider";
+
+@import 'theme/paper-dashboard';
+
+@import "app/main";
+@import "app/footer";
+@import "app/custom";

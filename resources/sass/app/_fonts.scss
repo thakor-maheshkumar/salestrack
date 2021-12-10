@@ -1,0 +1,43 @@
+/**
+* Holds all the fonts
+*
+*/
+@font-face {
+    font-family: 'MontserratRegular';
+    src:  url($fonts-path + 'MontserratRegular/MontserratRegular.eot?#iefix') format('embedded-opentype'),
+        url($fonts-path + 'MontserratRegular/MontserratRegular.woff') format('woff'),
+        url($fonts-path + 'MontserratRegular/MontserratRegular.ttf')  format('truetype'),
+        url($fonts-path + 'MontserratRegular/MontserratRegular.svg#MontserratRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratMedium';
+    src:  url($fonts-path + 'MontserratMedium/MontserratMedium.eot?#iefix') format('embedded-opentype'),
+        url($fonts-path + 'MontserratMedium/MontserratMedium.woff') format('woff'),
+        url($fonts-path + 'MontserratMedium/MontserratMedium.ttf')  format('truetype'),
+        url($fonts-path + 'MontserratMedium/MontserratMedium.svg#MontserratMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratLight';
+    src:  url($fonts-path + 'MontserratLight/MontserratLight.eot?#iefix') format('embedded-opentype'),
+        url($fonts-path + 'MontserratLight/MontserratLight.woff') format('woff'),
+        url($fonts-path + 'MontserratLight/MontserratLight.ttf')  format('truetype'),
+        url($fonts-path + 'MontserratLight/MontserratLight.svg#MontserratLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratBold';
+    src:  url($fonts-path + 'MontserratBold/MontserratBold.eot?#iefix') format('embedded-opentype'),
+        url($fonts-path + 'MontserratBold/MontserratBold.woff') format('woff'),
+        url($fonts-path + 'MontserratBold/MontserratBold.ttf')  format('truetype'),
+        url($fonts-path + 'MontserratBold/MontserratBold.svg#MontserratBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

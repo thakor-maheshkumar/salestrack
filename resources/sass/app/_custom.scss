@@ -1,0 +1,40 @@
+.table-condensed td, .table-condensed th{
+	padding: 2px;
+    vertical-align: middle;
+}
+
+.btn-group-link {
+	margin: 0 4px;
+	border-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+
+ul.nav div.sub_tree {
+    padding-left: 15px;
+}
+
+.sidebar .logo {
+    text-align: center;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline .select2-search__field {
+    width: 100% !important;
+}

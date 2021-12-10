@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"  lang="en"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <!-- meta begins -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- meta ends -->
+
+    
+    <meta name="csrf-token" content="2WGuJpflTQsxvlKF0esUoDLG9fPtQ7aUPVh2vFqo">
+
+    <!-- title begins -->
+    <title>Salestrack</title>
+    <link rel="shortcut icon" href="http://127.0.0.1:8000/favicon.ico" />
+
+    <!-- stylesheet begins -->
+    <link rel="stylesheet" href="http://127.0.0.1:8000/css/style.css" />
+
+    <!-- Google Font: Montserrat -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
+        <!-- stylesheet ends -->
+
+    
+    </head>
+    <body class=" ">
+                    <div class="wrapper">
+
+    <div class="sidebar" data-color="white" data-active-color="danger">
+    <div class="logo">
+        <a href="http://127.0.0.1:8000/admin/dashboard" class="simple-text logo-normal">
+            Salestrack
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class=" ">
+                <a href="http://127.0.0.1:8000/admin/dashboard">
+                    <i class="nc-icon nc-bank"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+                            <li class="active ">
+                    <a data-toggle="collapse" aria-expanded="true" href="#masters">
+                        <i class="nc-icon nc-chart-bar-32"></i>
+                        <p>
+                            Masters
+                            <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse sub_tree show" id="masters">
+                        <ul class="nav">
+                            <li class=" ">
+                                <a data-toggle="collapse" aria-expanded="true" href="#masters_account">
+                                    <i class="nc-icon nc-ruler-pencil"></i>
+                                    <p>
+                                         Accounts Info. 
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <div class="collapse sub_tree show" id="masters_account">
+                                    <ul class="nav">
+                                        <li class=" ">
+                                            <a data-toggle="collapse" aria-expanded="true" href="#masters_account_ledger">
+                                                <i class="nc-icon nc-box"></i>
+                                                <p>
+                                                     Ledgers 
+                                                    <b class="caret"></b>
+                                                </p>
+                                            </a>
+                                            <div class="collapse sub_tree show" id="masters_account_ledger">
+                                                <ul class="nav">
+                                                    <li class="active ">
+                                                        <a href="http://127.0.0.1:8000/admin/masters/ledger/sales">
+                                                            <i class="nc-icon nc-align-center"></i>
+                                                            <span class="sidebar-normal"> Customers </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class=" ">
+                                                        <a href="http://127.0.0.1:8000/admin/masters/ledger/purchase">
+                                                            <i class="nc-icon nc-align-center"></i>
+                                                            <span class="sidebar-normal"> Suppliers </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class=" ">
+                                                        <a href="http://127.0.0.1:8000/admin/masters/ledger/general">
+                                                            <i class="nc-icon nc-align-center"></i>
+                                                            <span class="sidebar-normal"> General </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/account/groups">
+                                                <i class="nc-icon nc-credit-card"></i>
+                                                <span class="sidebar-normal"> Account Groups </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/customer-groups">
+                                                <i class="nc-icon nc-chart-pie-36"></i>
+                                                <span class="sidebar-normal"> Customer Groups </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/supplier-groups">
+                                                <i class="nc-icon nc-delivery-fast"></i>
+                                                <span class="sidebar-normal"> Supplier Groups </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class=" ">
+                                <a data-toggle="collapse" aria-expanded="true" href="#masters_inventory">
+                                    <i class="nc-icon nc-paper"></i>
+                                    <p>
+                                         Inventory Info. 
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <div class="collapse sub_tree " id="masters_inventory">
+                                    <ul class="nav">
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/stock-items">
+                                                <i class="nc-icon nc-box"></i>
+                                                <span class="sidebar-normal"> Stock Item </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/stock-groups">
+                                                <i class="nc-icon nc-basket"></i>
+                                                <span class="sidebar-normal"> Stock Group </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/units">
+                                                <i class="nc-icon nc-ruler-pencil"></i>
+                                                <span class="sidebar-normal"> Unit </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/stock-categories">
+                                                <i class="nc-icon nc-bullet-list-67"></i>
+                                                <span class="sidebar-normal"> Stock Categories </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/bom">
+                                                <i class="nc-icon nc-air-baloon"></i>
+                                                <span class="sidebar-normal"> BOM </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/masters/batches">
+                                                <i class="nc-icon nc-align-center"></i>
+                                                <span class="sidebar-normal"> Batches </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class=" " >
+                                <a href="http://127.0.0.1:8000/admin/masters/transporter">
+                                    <i class="nc-icon nc-delivery-fast"></i>
+                                    <span class="sidebar-normal"> Transporter </span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="http://127.0.0.1:8000/admin/warehouses">
+                                    <i class="nc-icon nc-layout-11"></i>
+                                    <span class="sidebar-normal"> Warehouse </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                        <li class=" ">
+                <a data-toggle="collapse" aria-expanded="true" href="#transactions">
+                    <i class="nc-icon nc-chart-bar-32"></i>
+                    <p>
+                        Transactions
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse sub_tree " id="transactions">
+                    <ul class="nav">
+                                                    <li class="">
+                                <a data-toggle="collapse" aria-expanded="true" href="#transaction_purchase">
+                                    <i class="nc-icon nc-credit-card"></i>
+                                    <p>
+                                         Purchase 
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <div class="collapse sub_tree " id="transaction_purchase">
+                                    <ul class="nav">
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/purchase/materials">
+                                                <i class="nc-icon nc-box"></i>
+                                                <span class="sidebar-normal"> Material Request </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/purchase/purchase-order">
+                                                <i class="nc-icon nc-basket"></i>
+                                                <span class="sidebar-normal"> Purchase Orders </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/purchase/purchase-receipt">
+                                                <i class="nc-icon nc-ruler-pencil"></i>
+                                                <span class="sidebar-normal"> Purchase Reciepts </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/purchase/purchase-invoice">
+                                                <i class="nc-icon nc-bullet-list-67"></i>
+                                                <span class="sidebar-normal"> Purchase Invoice </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/purchase/purchase-return">
+                                                <i class="nc-icon nc-air-baloon"></i>
+                                                <span class="sidebar-normal"> Purchase Return </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                                                                            <li class="">
+                                <a data-toggle="collapse" aria-expanded="true" href="#transaction_sales">
+                                    <i class="nc-icon nc-calendar-60"></i>
+                                    <p>
+                                         Sales 
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <div class="collapse sub_tree " id="transaction_sales">
+                                    <ul class="nav">
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/sales/quotation">
+                                                <i class="nc-icon nc-box"></i>
+                                                <span class="sidebar-normal"> Quotation </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/sales/sales-order">
+                                                <i class="nc-icon nc-basket"></i>
+                                                <span class="sidebar-normal"> Sales Orders </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/sales/delivery-note">
+                                                <i class="nc-icon nc-ruler-pencil"></i>
+                                                <span class="sidebar-normal"> Delivery Note </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/sales/sales-invoice">
+                                                <i class="nc-icon nc-bullet-list-67"></i>
+                                                <span class="sidebar-normal"> Sales Invoice </span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="http://127.0.0.1:8000/admin/transactions/sales/sales-return">
+                                                <i class="nc-icon nc-air-baloon"></i>
+                                                <span class="sidebar-normal"> Sales Return </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                                            </ul>
+                </div>
+            </li>
+            <li class=" ">
+                <a href="http://127.0.0.1:8000/admin/stocks">
+                    <i class="nc-icon nc-share-66"></i>
+                    <p>Stock Transfer</p>
+                </a>
+            </li>
+            <li class=" ">
+                <a data-toggle="collapse" aria-expanded="true" href="#manufacturing">
+                    <i class="nc-icon nc-tile-56"></i>
+                    <p>
+                        Manufacturing
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse sub_tree " id="manufacturing">
+                    <ul class="nav">
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/manufacturing/production-plan">
+                                <i class="nc-icon nc-sound-wave"></i>
+                                <span class="sidebar-normal"> Production Plan </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/manufacturing/work-order">
+                                <i class="nc-icon nc-send"></i>
+                                <span class="sidebar-normal"> Workorder </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class=" ">
+                <a data-toggle="collapse" aria-expanded="true" href="#qc_tab">
+                    <i class="nc-icon nc-tablet-2"></i>
+                    <p>
+                        QC
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse sub_tree " id="qc_tab">
+                    <ul class="nav">
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/qc-report">
+                                <i class="nc-icon nc-tag-content"></i>
+                                <span class="sidebar-normal"> QC Report </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/qc-tests">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="sidebar-normal"> QC Tests. </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class=" ">
+                <a data-toggle="collapse" aria-expanded="true" href="#reports">
+                    <i class="nc-icon nc-tablet-2"></i>
+                    <p>
+                        Reports
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse sub_tree " id="reports">
+                    <ul class="nav">
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/reports/stock-ledger">
+                                <i class="nc-icon nc-tag-content"></i>
+                                <span class="sidebar-normal"> Stock Ledger </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/reports/payment-report">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="sidebar-normal"> Payment Report </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/reports/sales-report">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="sidebar-normal"> Sales Report </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/reports/purchase-report">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="sidebar-normal">Purchase Report</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class=" ">
+                <a href="http://127.0.0.1:8000/admin/payments">
+                    <i class="nc-icon nc-money-coins"></i>
+                    <p>Payment</p>
+                </a>
+            </li>
+            <li class=" ">
+                <a data-toggle="collapse" aria-expanded="true" href="#settings">
+                    <i class="nc-icon nc-tablet-2"></i>
+                    <p>
+                        Settings
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse sub_tree " id="settings">
+                    <ul class="nav">
+                        <li class=" ">
+                            <a data-toggle="collapse" aria-expanded="true" href="#users_setting">
+                                <i class="nc-icon nc-paper"></i>
+                                <p>
+                                     Users setting 
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <div class="collapse sub_tree " id="users_setting">
+                                <ul class="nav">
+                                    <li class=" ">
+                                        <a href="http://127.0.0.1:8000/admin/users">
+                                            <i class="nc-icon nc-box"></i>
+                                            <span class="sidebar-normal"> Users </span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="http://127.0.0.1:8000/roles">
+                                            <i class="nc-icon nc-basket"></i>
+                                            <span class="sidebar-normal"> Roles </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/companies/create">
+                                <i class="nc-icon nc-tag-content"></i>
+                                <span class="sidebar-normal"> Company </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/settings/terretory">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="sidebar-normal"> Terretories </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/settings/grades">
+                                <i class="nc-icon nc-tag-content"></i>
+                                <span class="sidebar-normal"> Grades </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <a href="http://127.0.0.1:8000/admin/departments">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="sidebar-normal"> Department </span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                                        <a href="http://127.0.0.1:8000/admin/allseries">
+                                            <i class="nc-icon nc-basket"></i>
+                                            <span class="sidebar-normal"> Series</span>
+                                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+    <div class="container-fluid">
+        <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+                <button type="button" class="navbar-toggler">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+            
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+                <div class="input-group no-border">
+                    <input type="text" value="" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <i class="nc-icon nc-zoom-split"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link btn-magnify" href="#pablo">
+                        <i class="nc-icon nc-layout-11"></i>
+                        <p>
+                            <span class="d-lg-none d-md-block">Stats</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item btn-rotate dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nc-icon nc-bell-55"></i>
+                        <p>
+                            <span class="d-lg-none d-md-block">Some Actions</span>
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item btn-rotate dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink2"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="nc-icon nc-settings-gear-65"></i>
+                        <p>
+                            <span class="d-lg-none d-md-block">Account</span>
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink2">
+                        <form class="dropdown-item" action="http://127.0.0.1:8000/logout" id="formLogOut" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="2WGuJpflTQsxvlKF0esUoDLG9fPtQ7aUPVh2vFqo">                        </form>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="http://127.0.0.1:8000/logout">Log out</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+            <!-- Start: main-content -->
+    <div class="content main-content--warppar">
+        <div class="row">
+            <div class="col-md-24">
+                                <div class="card main-content--subblock">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-16">
+                                <h2 class="mb-0">Sales Ledger</h2>
+                            </div>
+                            <div class="col-8 text-right">
+                                <form action="http://127.0.0.1:8000/admin/masters/ledger/export" method="get" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="2WGuJpflTQsxvlKF0esUoDLG9fPtQ7aUPVh2vFqo">                                    <input type="text" name="search" placeholder="state">
+                                <button type="submit">Export</button>
+                                </form>
+                                <a href="http://127.0.0.1:8000/admin/masters/ledger" class="btn btn-large btn-primary btn-group-link">Back</a>
+                                                                    <a href="http://127.0.0.1:8000/admin/masters/ledger/sales/create" class="btn btn-large btn-success btn-group-link">Add</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-wrapper table-responsive">
+                            <table id="group_table" class="table datatable table-condensed">
+                                <thead>
+                                                                            <tr>
+                                            <th></th>
+                                                                                            <th>Ledger Name</th>
+                                                                                            <th>Under</th>
+                                                                                            <th>GSTIN/UIN</th>
+                                                                                            <th>Party Type</th>
+                                                                                            <th>Edit</th>
+                                                                                            <th>Delete</th>
+                                                                                    </tr>
+                                                                    </thead>
+                                <tbody>
+                                                                        <tr>
+                                            <td colspan="6" align="center">Sales Ledger not found...</td>
+                                        </tr>
+                                                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End: main-content -->
+        <!-- /.content-wrapper -->
+<footer class="footer footer-black  footer-white ">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="credits ml-auto">
+                <span class="copyright">
+                    <strong>Copyright © 2019</strong>
+                    All rights reserved.
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- /.control-sidebar -->
+    </div>
+</div>
+        
+        
+
+        
+        <script>
+            // global app configuration object
+            var config = {
+                user_login: "eyJpdiI6IlhxbkU0Y1dFTHd5bVlnMnhjQUd1R0E9PSIsInZhbHVlIjoiWUpNVWVGaEpwM3BaS2JuVjRuWGhVUT09IiwibWFjIjoiMDE4ZDI3NjYyMzgyNDU4NGNmMjg0ZGRkNjc5MWQwYjZjMzUwZjMwMjQxZDRjNjJhMDVlNGM1YTNmMGFhMjBlZCJ9",
+                routes: {
+                    url: "http://127.0.0.1:8000",
+                    current_route: ""
+                }
+            };
+        </script>
+
+        <script src="http://127.0.0.1:8000/js/build.js"></script>
+        <script src="http://127.0.0.1:8000/js/EditableSelect.js"></script>
+
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+
+                
+    </body>
+</html>
+

@@ -1,0 +1,36 @@
+.navbar-top-right--links {
+	.nav-item {
+		padding: 0 10px;
+		.user-details {
+			.dropdown-toggle {
+				padding: 0;
+			    background: transparent;
+			    border: 0;
+			    &:after {
+			    	border-top: 0.3em solid #282828;
+			    }
+			    &:hover, &:focus {
+				    background: transparent;
+				    box-shadow: none;
+			    }
+			}
+			.profile-pic {
+				height: 30px;
+			    width: 30px;
+			    border-radius: 50%;
+			    display: inline-block;
+			    vertical-align: middle;
+			    background-color: #dcdcdc;
+			    overflow: hidden;
+				@include responsive-min(sm) {
+					height: 41px;
+			    	width: 41px;
+				}
+			}
+			.dropdown-item {
+				font-size: 16px;
+				line-height: 20px;
+			}
+		}
+	}
+}

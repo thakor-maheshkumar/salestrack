@@ -1,0 +1,268 @@
+@php
+    $element_counter = 0;
+@endphp
+<div class="form-group">
+    @if(! isset($is_submit_show))
+        {!! Form::submit('Submit', ['class' => 'btn btn-primary submitData']) !!}
+    @endif
+    {!! link_to_route('stocks.index', 'Cancel', [], ['class' => 'btn    btn-info']) !!}
+    @error('stock_transfer_no')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+</div>
+<!-- <div class="form-group">
+    {{-- {!! Form::label('stock_transfer_no', 'Stock Transfer No') !!}
+    {!! Form::text('stock_transfer_no', old('stock_transfer_no', isset($stock->stock_transfer_no) ? $stock->stock_transfer_no : ''), ['class' => 'form-control', 'placeholder' => 'Stock Transfer No', 'required' => 'required']) !!} --}}
+
+    {{-- @if ($errors->has('stock_transfer_no'))
+        <span class="help-block text-danger">
+            <strong>{{ $errors->first('stock_transfer_no') }}</strong>
+        </span>
+    @endif --}}
+    {{-- @if ($errors->has('manual_id'))
+        <span class="help-block text-danger">
+            <strong>{{ $errors->first('manual_id') }}</strong>
+        </span>
+    @endif --}}
+    @if(isset($stock))
+    <select class="form-control"  id="select1" name="series_type" disabled="true">
+        <option>Select Stock Series</option>
+        @foreach($stockseries as $key=>$value)    
+        <option value="{{ $value->id }}" @if($stock->series_type==$value->id){{'selected'}}@endif>{{ $value->series_name }}</option>
+        @endforeach
+    </select>
+    @else
+    <select class="form-control"  id="select1" name="series_type" >
+        <option>Select Stock Series</option>
+        @foreach($stockseries as $key=>$value)    
+        <option value="{{ $value->id }}">{{ $value->series_name }}</option>
+        @endforeach
+    </select>
+    @endif
+</div> -->
+<div class="form-group">
+     <div class="form-row">
+        <div class="col-md-12">
+    {!! Form::label('return_no', 'MR No *') !!}
+           <!--  {!! Form::text('stock_transfer_no', old('stock_transfer_no', isset($stock->stock_transfer_no) ? $stock->stock_transfer_no : ''), ['class' => 'form-control series_id', 'id' => 'series_id','readonly' ]) !!}
+            <input type="text" name="manual_id" class="form-control" id="manual_id"  style="display:none" >
+            @if ($errors->has('manual_id'))
+                <span class="help-block text-danger">
+                <strong>{{ $errors->first('manual_id') }}</strong>
+                </span>
+            @endif
+            <input type="hidden" name="suffix" id="suffix">
+            <input type="hidden" name="prefix" id="prefix">
+            <input type="hidden" name="series_starting_digits" id="series_starting_digits"> -->
+            @if(isset($stock))
+            <input type="text" name="stock_transfer_no" value="{{$stock->stock_transfer_no}}" class="form-control" readonly>
+            @else
+            @foreach($stockseriesstatus as $key=>$value)
+            @if($value->request_type=='automatic')
+            <input type="text" name="stock_transfer_no" class="form-control" placeholder="MR NO" value="{{$value->prefix_static_character}}{{$value->series_current_digit}}{{$value->suffix_static_character}}" readonly>
+            @else
+            <input type="text" name="stock_transfer_no" class="form-control" placeholder="Stock Transfer No">
+            @endif
+            @endforeach
+            @endif
+            
+
+</div>
+@if(!(isset($stock)))
+        <div class="col-md-12">
+            @php
+            $document_no=\App\Models\Stock::orderBy('document_no','desc')->where('document_no','!=','0')->first();
+            $document_no_app=$document_no->document_no ?? 'MR0000';
+            @endphp
+            <div class="document_no_issue">
+                <label>Document No</label>
+                {!! Form::text('document_no',old('document_no',isset($stock->document_no) ? $stock->document_no :$document_no_app),['class'=>'form-control document_no','readonly',]) !!}
+            </div>
+            <div class="document_no_receipt" style="display:none">
+                <label>Document No</label>
+                    <select class="form-control receipt_value" name="receiptvalue">
+                        <option value="Select Document No">Select Document No</option>
+                        @foreach($documentData as $documentDataValue)
+                        <option value="{{$documentDataValue->document_no}}" qty_data="{{$documentDataValue->qty}}" 
+                            sum_qty="{{$documentDataValue->quantity}}">{{$documentDataValue->document_no}}</option>
+
+                        @endforeach
+                    </select>
+             </div>
+        </div>
+        @elseif((isset($stock)))
+        <div class="col-md-12">
+            @php
+            $document_no=\App\Models\Stock::orderBy('id','desc')->where('document_no','!=','0')->first();
+            $document_no_app=$document_no->document_no;
+            @endphp
+            <div class="document_no_issue">
+                <label>Document No</label>
+                {!! Form::text('document_no',old('document_no',isset($stock->document_no) ? $stock->document_no :'MR0000'),['class'=>'form-control document_no','readonly',]) !!}
+            </div>
+            <div class="document_no_receipt" style="display:none">
+                <label>Document No</label>
+                    <select class="form-control receipt_value" name="receiptvalue">
+                        <option value="Select Document No">Select Document No</option>
+                        @foreach($documentData as $documentDataValue)
+                        <option value="{{$documentDataValue->document_no}}">{{$documentDataValue->document_no}}</option>
+                        @endforeach
+                    </select>
+             </div>
+        </div>
+        @endif
+    </div>
+</div>
+<div class="form-group">
+    {!! Form::label('stock_transfer_type', 'Stock Transfer Type *') !!}
+    {!! Form::select('stock_transfer_type', ['' => 'Select Type'] + $stock_transfer_types, old('stock_transfer_type', isset($stock->stock_transfer_type) ? $stock->stock_transfer_type : ''), ['class' => 'form-control', 'required' => 'required']) !!}
+
+    @if ($errors->has('stock_transfer_type'))
+        <span class="help-block text-danger">
+            <strong>{{ $errors->first('stock_transfer_type') }}</strong>
+        </span>
+    @endif
+</div>
+<div class="form-group">
+    {!! Form::label('date', 'Date *') !!}
+    {!! Form::text('date', old('date', isset($stock->date) ? $stock->date : ''), ['class' => 'form-control datepicker', 'placeholder' => 'Date', 'required' => 'required', 'autocomplete' => 'off']) !!}
+
+    @if ($errors->has('date'))
+        <span class="help-block text-danger">
+            <strong>{{ $errors->first('date') }}</strong>
+        </span>
+    @endif
+</div>
+<div class="form-group">
+    <div class="form-row">
+        <div class="col-md-12">
+            {!! Form::label('default_source_warehouse', 'Default Source Warehouse') !!}
+            {!! Form::select('default_source_warehouse', ['' => 'Select Warehouse'] + $warehouses, null, ['class' => 'form-control source_warehouse warehouse_select', 'id' => 'default_source_warehouse']) !!}
+
+            @if ($errors->has('default_source_warehouse'))
+                <span class="help-block text-danger">
+                    <strong>{{ $errors->first('default_source_warehouse') }}</strong>
+                </span>
+            @endif
+        </div>
+        <div class="col-md-12">
+            {!! Form::label('default_target_warehouse', 'Default Target Warehouse') !!}
+            {!! Form::select('default_target_warehouse', ['' => 'Select Warehouse'] + $warehouses, null, ['class' => 'form-control target_warehouse warehouse_select', 'id' => 'default_target_warehouse']) !!}
+
+            @if ($errors->has('default_target_warehouse'))
+                <span class="help-block text-danger">
+                    <strong>{{ $errors->first('default_target_warehouse') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    {!! Form::label('items', 'Items') !!}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                {{-- <th scope="col"></th> --}}
+                <th scope="col">Source Warehouse</th>
+                {{-- <th scope="col">Item Code</th> --}}
+                <th scope="col">Item Name</th>
+                <th scope="col">Source Batch</th>
+                <th scope="col">UOM</th>
+                <th scope="col" class="available_qtyData">Available Quantity</th>
+                <th scope="col">Quantity *</th>
+
+                <th scope="col">Rate *</th>
+                <th scope="col">Target Warehouse</th>
+                <th scope="col">Target Batch</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="add-items-list">
+            @if(isset($stock->stock_source_items) && !empty($stock->stock_source_items))
+                @foreach($stock->stock_source_items as $sKey => $stock_source_item)
+                    <tr class="new-item">
+                        {{-- <td>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1"></label>
+                            </div>
+                        </td> --}}
+                        <td>
+                            {!! Form::select("source_items[$element_counter][source_warehouse]", $warehouses, $stock_source_item->source_warehouse, ['class' => 'form-control source_warehouse warehouse_select swarehouse', 'data-name' => 'source_warehouse', 'required' => 'required']) !!}
+                        </td>
+                        {{-- <td>
+                            {!! Form::select("source_items[$element_counter][item_code]", ['' => 'Select Item Code'] + $stock_items_codes, $stock_source_item->item_id, ['class' => 'form-control item_code select2-elem','data-name' => 'item_code', 'required' => 'required']) !!}
+                        </td> --}}
+                        <td>
+                            <select id="item_name" name="source_items[{{$element_counter}}][item_name]" data-plugin-selectTwo class="form-control item_name select2-elem select2 selected_item" data-name="item_name" required="required">
+                                <option value="">Select Item</option>
+                                    @if(!empty($stockItem))
+                                        @foreach($stockItem as $value)
+                                            <option value="{{ $value->id }}" @if($stock_source_item->item_id == $value->id){{"selected='selected'"}} @endif> {{ $value->pack_code.'-'.$value->name }} </option>
+                                        @endforeach
+                                    @endif
+                            </select>
+                        </td>
+                        <td>
+                            <!-- {!! Form::select("source_items[$element_counter][batch]", ['' => 'Select Batch'], $stock_source_item->batch_id, ['class' => 'form-control batch select2-elem', 'data-name' => 'batch']) !!} -->
+
+                              {!! Form::select("source_items[$element_counter][batch]", ['' => 'Select Batch'] + $batches, $stock_source_item->batch_id, ['class' => 'form-control source_batch select2-elem', 'data-name' => 'batch']) !!}
+                        </td>
+                        <td>
+                            {!! Form::select("source_items[$element_counter][uom]", isset($stock_items_units[$stock_source_item->item_id]) ? $stock_items_units[$stock_source_item->item_id] : '', $stock_source_item->uom, ['class' => 'form-control uom', 'data-name' => 'uom', 'required' => 'required']) !!}
+                        </td>
+                       <td>
+                            <input type="text" name="" class="form-control available_qty" value="0" readonly>
+                        </td>
+                        <td>
+                            {!! Form::text("source_items[$element_counter][quantity]", $stock_source_item->quantity, ['class' => 'form-control', 'placeholder' => 'Quantity', 'data-name' => 'quantity', 'required' => 'required']) !!}
+                        </td>
+                        <td>
+                            {!! Form::text("source_items[$element_counter][rate]", $stock_source_item->rate, ['class' => 'form-control', 'placeholder' => 'Rate', 'data-name' => 'rate', 'required' => 'required']) !!}
+                        </td>
+                        <td>
+                            {!! Form::select("source_items[$element_counter][target_warehouse]", $warehouses, $stock_source_item->target_warehouse, ['class' => 'form-control target_warehouse warehouse_select', 'data-name' => 'target_warehouse', 'required' => 'required']) !!}
+                        </td>
+                        <td>
+                           <!--  {!! Form::select("source_items[$element_counter][target_batch]", ['' => 'Select Batch'] + $batches, $stock_source_item->target_batch_id, ['class' => 'form-control tbatch select2-elem', 'data-name' => 'batch']) !!} -->
+                            {!! Form::select("source_items[$element_counter][target_batch]", ['' => 'Select Batch'] + $batches, $stock_source_item->target_batch_id, ['class' => 'form-control target_batch tbatch', 'data-name' => 'target_batch']) !!}
+                        </td>
+                        <td>
+                            <div class="delete-item-block">
+                                <a href="javascript:void(0);"
+                                    class="btn btn-remove delete-item btn-danger" data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Delete Item">
+                                        <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    @php
+                        $element_counter++;
+                    @endphp
+                @endforeach
+            @else
+                <tr class="new-item">
+                    {{-- <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1"></label>
+                        </div>
+                    </td> --}}
+                    <td>
+                        <!-- {!! Form::select("source_items[$element_counter][source_warehouse]", ['' => 'Select Warehouse'] + $warehouses, null, ['class' => 'form-control source_warehouse warehouse_select', 'data-name' => 'source_warehouse']) !!} -->
+                        {!! Form::select("source_items[$element_counter][source_warehouse]", ['' => 'Select Warehouse'] 
+                        +$warehouses, null, ['class' => 'form-control source_warehouse warehouse_select swarehouse', 'data-name' => 'source_warehouse']) !!}
+                    </td>
+                    <td>
+                        <select id="item_name" name="source_items[{{$element_counter}}][item_name]" data-plugin-selectTwo class="form-control item_name select2-elem select2 selected_item" data-name="item_name" required="required">
+                            <option value="">Select Item</option>
+                                @if(!empty($stockItem))
+                                    @foreach($stockItem as $value)
+                                        <option value="{{ $value->id }}"> {{ $value->pack_code.'-'.$value->name }} </option>
+                                    @endforeach
+                                @endif
+                        </select>
+                       {{--  {!! Form::select("source_items[$element_counter][item_code]", ['' => 'Select Item Code'] + $stock_items_codes, null, ['class' => 'form-control item_code select2-elem','data-name' => 'item_code', 'required' => 'required']) !!} --}}
+         

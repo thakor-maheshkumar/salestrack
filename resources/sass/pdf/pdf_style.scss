@@ -1,0 +1,21 @@
+/*
+ * Filename : style.scss
+ *
+ *
+ * Contains all the styles of main application
+ * via importing all the individual scss files
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+
+$body-bg: #f5f8fa;
+
+// Typography
+
+$font-family-sans-serif: "Open Sans", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+@import "pdf.main.scss";
+
+@import "pdf";

@@ -1,0 +1,173 @@
+Issue in stock item discount percentage & tax percentage
+Date:20/07/2021
+1>Worked on issue resolved material descending order -issue 7
+2>Worked on issue resolved parchase order descending order -issue 6.
+3>Worked on issue resolved material request accept negative value -issue 2
+4>Worked Issue in stock item discount percentage & tax percentage-resolved.-3
+5>Worked Issue in stock item discount percentage & tax percentage-resolved.-8
+6>Worked on issue resolved Issue in stock item discount percentage & tax percentage.-11
+7>Worked on issue resolved PO quantity coming different then purchase Order-
+
+
+21/07/2021
+1>Worked on set customer series module.
+2>Worked on bug resolved.
+
+
+https://stackoverflow.com/questions/14216796/how-do-i-load-data-from-an-input-field-to-another-page-using-jquery-and-ajax/14217071
+
+22/07/2021
+1>Worked on set stars on required field.
+2>Worked on set button on top of form in all pages.
+
+https://www.positronx.io/laravel-dependent-country-state-city-dropdown-with-ajax/
+
+23/07/2021
+1>
+
+
+26/07/2021
+1>Worked on changes in Sales ledger.
+2>Worked on Supplier.
+3>General Series Controller, view, created already. Route Remaining.
+4>Worked on Export file with excel.
+Import export in master
+2>export of Transaction with filter.
+3>Tranaction open pdf
+
+27/07/2021
+1>Worked Particaular column search bar.
+2>
+28/07/2021
+1>Worked Particaular column search bar.
+2>Worked on set export functionality in purchase order.
+3>Worked on set export functionality in invoice order.
+
+29/07/2021
+1>Worked on set export functionality in invoice order.
+2>Worked on set export functionality in Purchase Return order.
+3>Worked on set export functionality in Purchase Return Receipt.
+3>Worked on set export functionality in Material.
+4>Worked on search and export functionality in sales module, Quatation, Sales Order.
+
+30/07/2021
+1>Worked on set search and export functionality in sales Invoice, Delievry not, Sales return.
+2>Worked on Set export functinality in masters module.
+3>Worked on set search and export functionality in Stock Transfer,manufectureing,Qc Module.
+
+change css in style.css for datatatable 12024 to 12031
+
+
+
+ COMPOSER_MEMORY_LIMIT=-1 composer require maatwebsite/excel
+    COMPOSER_MEMORY_LIMIT=-1 composer require maatwebsite/excel
+
+
+    foreach($request->start_time as $key => $value){
+                $new=new Inventory;
+                $new->start_time =  $value;
+                $new->end_time = $request->end_time[$key];
+                $new->interval = $request->interval[$key];
+                $new->save();
+        }
+
+
+http://www.expertphp.in/article/laravel-php-upload-csv-file-and-import-to-database
+
+
+03-8-2021
+1>Worked on import functioanlity in supplier Group
+2>Worked on set all export master.
+
+04-08-2021
+1>Done Export functionality in masters.
+2>Worked Import functionality in supplier Group
+3>Worked Import functionality in Customer Group
+4>Worked Import functionality in Account Group
+5>Worked Import functionality in Warehouse
+
+05-08-2021
+1>Worked on set import functionality all inventory info module ->six sub module inside.
+2>Worked on set import functionality in warehouse module.
+
+
+
+
+
+
+https://www.geeksforgeeks.org/how-to-validate-gst-goods-and-services-tax-number-using-regular-expression/
+
+'regex:/\b(0?[1-9]|[12][0-9]|3[01])\b/'
+
+'required|regex:/(^[0-3]{1}[0-5]{1}[a-z]{5}$)/';
+
+
+
+
+16-08-2021
+1>Purchase-Order Print Perfect.
+->Image came static.
+->GSTIN, PAN came static
+
+2>Purchase Receipt Print Perfect.
+->Format totaly Diffrent.
+3>Purchase Invoice Print Perfect.
+4>Purchase Return print option not available.
+
+5>Quotation print 50% percentage perfect.
+2>Sales Order Print perfect
+3>Delivery not print option does not available.
+4>Sales Invoice Print perfect work.
+5>Sales Return print option not available
+
+
+{{ route('delivery-note.print', $item->id) }}
+
+
+16-08-2021
+1>Worked on set fiedl name in all module
+1>Worked on set print option in delivery note.
+
+
+
+
+ <img src="{{URL::to('/')}}/images/{{$products->image}}" width="80">
+
+https://stackoverflow.com/questions/50592723/property-x-does-not-exist-on-this-collection-instance-laravel-relationship
+
+
+
+https://www.britannica.com/topic/list-of-cities-and-towns-in-India-2033033
+https://www.britannica.com/topic/list-of-cities-and-towns-in-India-2033033
+
+
+local@data@123
+
+
+/home/u422338526/domains/salestrack.co.in/public_html/ 
+
+24-08-2021
+
+1>Worked on remove public path from learning website.
+2>Worked on remove htaccess file and place outside.
+3>Worked on make document of creating project.
+4>Worked on edit for address.
+5>Worked on remove fiedl from purchase order, set Date proper in format.
+6>Worked on branch properly show in both module.
+7>Worked on same state fall in database.
+
+1>City based on state.
+
+25/08/2021
+1>
+
+
+https://laracasts.com/discuss/channels/laravel/update-an-existing-column-in-laravel-migration
+
+
+
+01-09-2021
+
+Important not:
+
+Open logic for salesinvoice, and salseorder for branch name get, line-311 for salesOrder, 107 for salesInvoice
